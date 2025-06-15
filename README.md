@@ -1,17 +1,18 @@
-# HR Employee Analysis SQL and Power BI Project
+# 📊 HR Employee Analysis SQL and Power BI Project
 
-## Project Overview
+## 📘 Project Overview
 
-**Project Title**: HR Employee Analysis
-**Level**: Beginner
+This project demonstrates my ability to analyze HR employee data using SQL and Power BI. It includes:
 
-This project is designed to demonstrate SQL skills and techniques typically used by data analysts to explore, clean, and analyze retail sales data. The project involves setting up a HR Employee Analysis database, performing exploratory data analysis (EDA), and answering specific analysis questions through SQL queries.
+- Cleaning and transforming HR data using SQL
+- Performing exploratory data analysis (EDA)
+- Creating interactive Power BI dashboards
 
 ## Objectives
-1. **Set up a hr employee analysis database**: Create and populate a hr analysis database with the provided hr data.
-2. **Data Cleaning**: Standardize inconsistent date formats and ensure column data types are accurate.
-3. **Exploratory Data Analysis (EDA)**: Perform basic exploratory data analysis to understand the dataset.
-4.  **HR Analysis**: Use SQL and Power BI to clean, explore, and visualize employee data to uncover trends and workforce insights.
+1. **Database Setup**: Create and populate a HR employee analysis database.
+2. **Data Cleaning**:  Standardize date formats and fix inconsistent column types.
+3. **Exploratory Data Analysis (EDA)**: Identify patterns in age, gender, and employment status.
+4. **Dashboard Visualization**: Build interactive dashboards in Power BI to visualize workforce trends.
 
 
 ## Project Structure
@@ -82,7 +83,7 @@ set age = timestampdiff(year, birthdate, curdate());
 ### 3. Data Analysis & Findings
 The following SQL Queries were developed to answer specific analysis questions:
 
-1. **what is the gender breakdown of employees in the company?**
+1. **👥 Gender Breakdown of Employees**
   ```sql
 select gender, count(*) as count
 from hr
@@ -90,7 +91,7 @@ where age >= 18 and termdate = '000-00-00'
 group by gender;
  ```
 
-2. **what is the race/ethnicity breakdown of employees in the company?**
+2. **🌍 Race/Ethnicity Breakdown of Employees**
 ```sql
 select race, count(*) as count
 from hr
@@ -99,7 +100,7 @@ group by race
 order by 2 desc;
 ```
 
-3. **what is the age distribution of employees in the company?**
+3. **📈 Age Distribution of Employees**
 ```sql
 select 
 	min(age) as youngest,
@@ -123,7 +124,7 @@ group by age_group, gender
 order by age_group, gender;
 ```
 
-4. **How many employees work at headquarters vs remote location?**
+4. **🏢 Headquarters vs Remote: Employee Count Comparison**
  ```sql
 select location, count(*) as count
 from hr
@@ -131,14 +132,14 @@ where age >= 18 and termdate = '000-00-00'
 group by location;
 ```
 
-5. **what is the average length of employment for employees who have been terminated?**
+5. **⏳ Average Length of Employment (Terminated Employees)**
 ```sql
 select round(avg(datediff(termdate, hire_date))/365, 0) as avg_length_employment
 from hr
 where termdate <= curdate() and termdate <> '0000-00-00' and age >= 18;
 ```
 
-6. **how does the gender distribution vary across departments and job title?**
+6. **🚻 Gender Distribution by Department**
 ```sql
 select department, gender, count(*) as count
 from hr
@@ -147,7 +148,7 @@ group by department, gender
 order by department;
 ```
 
-7. **what is distribution of the job titles across the company?**
+7. **🧑‍💼 Job Title Distribution**
 ```sql
 select jobtitle, count(*) as count
 from hr
@@ -156,7 +157,7 @@ group by jobtitle
 order by jobtitle asc;
 ```
 
-8. **which department has the highest turnover rate?**
+8. **📉 Department with the Highest Turnover Rate**
 ```sql
 select
 	  department,
@@ -174,7 +175,7 @@ from (
 order by termination_rate desc;
 ```
 
-9. **what is the distribution of employees across location by city and state?**
+9. **🗺️ Employee Distribution by City and State**
 ```sql
 select * from hr;
 select location_state, count(*) as count
@@ -184,7 +185,7 @@ group by location_state
 order by 2 desc;
 ```
 
-10. **how has the company employee count changed overtime based on hire and term date?**
+10. **📅 Employee Count Change Over Time (Hiring vs Termination Trend)**
 ```sql
 select 
 	  years,
@@ -203,7 +204,7 @@ from (
 order by years asc;
 ```
     
-11. **what is the tenure distribution for each department?**
+11. **📊 Average Tenure by Department**
 ```sql
 select department, round(avg(datediff(termdate, hire_date)/365),0) as avg_tenure
 from hr
@@ -211,15 +212,17 @@ where termdate <= curdate() and termdate <> '0000-00-00' and age >= 18
 group by department;
 ```
 
-## Key Insights
+## 📌 Key Insights
 
 - The majority of employees are between 25 and 34 years old.
-- The turnover rate is highest in the Sales department.
-- Remote work employees show slightly different age distributions compared to those at headquarters.
+- The turnover rate is highest in the **Sales** department.
+- Remote workers tend to be older on average than those in headquarters.
+- Gender distribution varies significantly across departments like Engineering and Human Resources.
 
-## Conclusion
+## ✅ Conclusion
 
-This project serves as a comprehensive introduction to SQL for data analyst, converting database set up, data cleaning, exploratory data analysis.
+This project demonstrates the end-to-end process of data analysis: from database setup, cleaning, exploration, to visualization. It showcases my foundational SQL and Power BI skills in solving real-world HR questions.
+
 
 ## How to Use :
 
@@ -235,6 +238,20 @@ This project serves as a comprehensive introduction to SQL for data analyst, con
 Here is a snapshot of the Power BI dashboard created from the cleaned dataset:
 
 ### Page 1:
-![page 1](![Screenshot 2025-06-15 143736](https://github.com/user-attachments/assets/dc2663d7-2725-40a3-b28d-32fc770246ac)
+![Screenshot 2025-06-15 143736](https://github.com/user-attachments/assets/dc2663d7-2725-40a3-b28d-32fc770246ac)
+
+### Page 2:
+![Screenshot 2025-06-15 130850](https://github.com/user-attachments/assets/9b34b83e-27e5-44b9-ac72-8b57565302e7)
+
+## 👩‍💻 Author - Linda Ismail Sabaniah
+
+This project is part of my portfolio, showcasing the SQL and Power BI skills essential for data analyst roles.  
+If you have any questions, feedback, or would like to collaborate, feel free to get in touch!
+
+## 💻 Tech Stack
+- MySQL
+- PowerBI
+
+
 
 
