@@ -224,15 +224,6 @@ group by department;
 This project demonstrates the end-to-end process of data analysis: from database setup, cleaning, exploration, to visualization. It showcases my foundational SQL and Power BI skills in solving real-world HR questions.
 
 
-## How to Use :
-
-1. **Clone the Repository**: Clone this project repository from GitHub.
-2. **Setup the Database**: Run the SQL scripts provided in the `database_setup.sql` file to create and populate the database.
-3. **Import file**: Import `hr_employee.csv` into MySQL
-4. **Run the Queries**: Use the SQL queries provided in the `database projects - data cleaning & analysis.sql` file to perform your analysis.
-5. **Explore and Modify**: Feel free to modify the queries to explore different aspects of the dataset or answer additional business questions.
-6. **Visualization**: Use the clean data in Power BI for visualization
-
 ## Power BI Dashboard
 
 Here is a snapshot of the Power BI dashboard created from the cleaned dataset:
